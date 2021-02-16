@@ -1,0 +1,6 @@
+<p>login-form works!</p>
+<form method="POST" [formGroup]="formGroup" (ngSubmit)="loginProcess()">
+  <input name="email" formControlName="email">
+  <input type="password" formControlName="password">
+  <input type="submit">
+</form>
