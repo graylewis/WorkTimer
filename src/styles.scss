@@ -5,6 +5,7 @@
 
 body {
   background-color: $dark;
+  margin-top: 3em;
 }
 
 input[type="button"]{
@@ -13,10 +14,21 @@ input[type="button"]{
 input[type="button"]::-moz-focus-inner {
   border: 0;
 }
-
+input {
+  border: none;
+  border: 2px solid transparent;
+}
+input:focus {
+  border: 2px solid $hightlight2;
+  outline: none;
+}
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: Oxygen;
 }
 
+.card {
+  background-color: $medium;
+  border-radius: 4px;
+}

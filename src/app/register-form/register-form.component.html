@@ -1,1 +1,15 @@
-<p>register-form works!</p>
+<div class="register-card card">
+  <h3 class="card-title">Create an Acccount</h3>
+  <form class="register-form" method="POST" [formGroup]="formGroup" (ngSubmit)="registerProcess()">
+    <input class="register-input register-email" placeholder="Email" name="email" formControlName="email">
+    <input class="register-input register-password" placeholder="Password" type="password" formControlName="password">
+    <input class="register-input register-confirm" placeholder="Confirm Password" type="password" formControlName="confirm">
+
+    <div class="names-container">
+      <input class="register-input register-first" placeholder="First Name" formControlName="first">
+      <input class="register-input register-last" placeholder="Last Name" formControlName="last">
+    </div>
+    <input class="register-input register-submit" placeholder="" type="submit">
+  </form>
+</div>
+

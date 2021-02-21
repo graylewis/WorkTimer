@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TimerServiceService } from './../timer-service.service';
 
 @Component({
   selector: 'app-timer',
@@ -14,7 +15,7 @@ export class TimerComponent implements OnInit {
   running: boolean = false;
   entries: { startTime: Date, endTime: Date, length: number, prettyLength: string }[] = [];
 
-  constructor() { }
+  constructor(private timerService:TimerServiceService) { }
 
   formatTime(seconds: number) {
     const h = Math.floor(seconds / 3600);
@@ -56,7 +57,20 @@ export class TimerComponent implements OnInit {
       this.timeElapsed = 0;
       this.running = false;
       clearInterval(this.ticker)
+
+      this.saveEntries()
     }
+  }
+
+  saveEntries() {
+      this.timerService.saveEntries(this.entries).subscribe(result => {
+        console.log(`RESULT: ${result}`)
+        if(result) {
+          console.log('updated entries')
+        } else {
+          console.log(result);
+        }
+      })
   }
 
   trackByFn(index: number, item: any) {

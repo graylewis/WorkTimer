@@ -1,0 +1,21 @@
+<div class='listings-container'>
+
+<a href="/timer"><div class="view-all">
+  Open Timer
+</div></a>
+
+<ul class="time-listings" *ngIf="entries.length > 0">
+  <div class="" *ngFor="let entry of entries; index as i; trackBy: trackByFn" >
+    <div class="timer-entry-container" *ngIf="entry.prettyDate; else withoutTime">
+      <div class="listing-day-label"><span>{{ entry.prettyDate }}</span></div>
+      <li class="timer-entry">{{ entry.prettyLength }}</li>
+    </div>
+    <ng-template #withoutTime>
+      <div class="timer-entry-container">
+        <li class="timer-entry">{{ entry.prettyLength }}</li>
+      </div>
+    </ng-template>
+  </div>
+</ul>
+</div>
+

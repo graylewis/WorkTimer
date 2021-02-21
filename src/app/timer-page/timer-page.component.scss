@@ -1,0 +1,35 @@
+@import "~/src/app/variables.scss";
+
+.timer-container {
+  width: 80%;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+.view-all {
+  color: white;
+
+  font-weight: bold;
+
+  padding: .5em;
+  padding-right: 1em;
+  padding-left: 1em;
+  border-radius: 4px;
+  margin-bottom: 1em;
+  transition: background-color .5s;
+
+  background-color: transparentize($light, .5);;
+}
+
+.view-all:hover {
+  background-color: $light;
+}
+
+

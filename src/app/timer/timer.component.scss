@@ -5,7 +5,9 @@
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 40%;
+  min-width: 300px;
+  max-width: 500px;
   padding: .5em;
   align-items: center;
   justify-content: center;
@@ -74,13 +76,13 @@ button:hover {
   background-color: $hightlight2;
 }
 
-ul {
-  width: 100%;
+.time-listings {
+  max-width: calc( 1em + 400px);
   margin: 0;
   margin-top: 0.5em;
   padding: 0;
   color: $dark;
-  max-height: 200px;
+  max-height: 500px;
   overflow: scroll;
   color: white;
   -ms-overflow-style: none;  /* IE and Edge */
@@ -88,6 +90,10 @@ ul {
 }
 ul::-webkit-scrollbar {
   display: none;
+}
+.timer-entry-container {
+  margin: auto;
+  margin-bottom: .5em;
 }
 .timer-entry {
   list-style: none;
@@ -100,8 +106,8 @@ ul::-webkit-scrollbar {
   line-height: 16px;
 
   padding: .5em;
-  margin: auto;
-  margin-bottom: .5em;
+  margin-bottom: .25em;
+
   width: calc(100);
   box-sizing: border-box;
 }

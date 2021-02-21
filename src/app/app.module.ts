@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { CtaComponent } from './cta/cta.component';
 import { LandingComponent } from './landing/landing.component';
+import { TimerPageComponent } from './timer-page/timer-page.component';
+import { ViewEntriesComponent } from './view-entries/view-entries.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { LandingComponent } from './landing/landing.component';
     LoginFormComponent,
     RegisterFormComponent,
     CtaComponent,
-    LandingComponent
+    LandingComponent,
+    TimerPageComponent,
+    ViewEntriesComponent
   ],
   imports: [
     BrowserModule,

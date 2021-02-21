@@ -6,8 +6,8 @@
   <button *ngIf="!running; else elseBlock" (click)="onClickPlus()">Start Timer</button>
   <ng-template #elseBlock><button (click)="onClickStop()">Reset Timer</button></ng-template>
 </div>
-<ul *ngIf="entries.length > 0">
-  <li *ngFor="let entry of entries; index as i; trackBy: trackByFn" class="timer-entry">
+<ul class="time-listings" *ngIf="entries.length > 0">
+  <li class="time-listing" *ngFor="let entry of entries; index as i; trackBy: trackByFn" class="timer-entry">
     {{ entry.prettyLength }}
   </li>
 </ul>

@@ -14,6 +14,10 @@ export class AuthServiceService {
     return this.http.post(`${baseUrl}/login`, data);
   }
 
+  register(data: any):Observable<any>{
+    return this.http.post(`${baseUrl}/register`, data)
+  }
+
   isLoggedIn() {
     console.log(localStorage.getItem('token'))
     return (localStorage.getItem('token')) ? true:false
