@@ -14,6 +14,7 @@ export class TimerComponent implements OnInit {
   startTime: Date | undefined;
   running: boolean = false;
   entries: { startTime: Date, endTime: Date, length: number, prettyLength: string }[] = [];
+  uploadedEntries: { length: number, prettyLength: string }[] = [];
 
   constructor(private timerService:TimerServiceService) { }
 
@@ -58,7 +59,7 @@ export class TimerComponent implements OnInit {
       this.running = false;
       clearInterval(this.ticker)
 
-      this.saveEntries()
+      this.saveEntries();
     }
   }
 
@@ -67,6 +68,8 @@ export class TimerComponent implements OnInit {
         console.log(`RESULT: ${result}`)
         if(result) {
           console.log('updated entries')
+          this.uploadedEntries = this.uploadedEntries.concat(this.entries.map((val) => { return { length: val.length, prettyLength: val.prettyLength }}))
+          this.entries = [];
         } else {
           console.log(result);
         }

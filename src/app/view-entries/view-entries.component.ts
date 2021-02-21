@@ -24,7 +24,7 @@ export class ViewEntriesComponent implements OnInit {
         const date = new Date(entry.endTime)
         entry.day = date.getDay();
         console.log(entry)
-        if ((this.entries[i-1] && this.entries[i].day !== this.entries[i-1].day) || i===0) {
+        if ((result[i-1] && result[i].day !== result[i-1].day) || i===0) {
           entry.prettyDate = date.toLocaleDateString()
         }
       })
