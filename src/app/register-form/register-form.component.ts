@@ -33,7 +33,6 @@ export class RegisterFormComponent implements OnInit {
       this.authService.register(this.formGroup.value).subscribe(result => {
         console.log(`RESULT: ${result}`)
         if(result) {
-          localStorage.setItem('token', result)
           this.router.navigate(['timer'])
         } else {
           console.log(result);
